@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI';
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+#the_ant {
+  cursor: url('Imagenes/MataMosca.cur'), auto;
+  position: fixed;
+  top: 70px;
+  right: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 80px;
+}
+.logo-img {
+  width: 80px;
+  height: 80px;
+}
+.logo-circular {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.logo-circular.mostrar {
+  opacity: 1;
+  visibility: visible;
+}
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  opacity: 1;
+}
+.logo-img.girar {
+  animation: giroCompleto 0.6s ease;
+}
+/* Giro completo */
+@keyframes giroCompleto {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/*TextoEntraAlLogo*/
+.logo-text.retraer {
+  animation: retraerTexto 0.6s ease forwards;
+}
+@keyframes retraerTexto {
+  0% { opacity: 1; transform: translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateX(-50px) scale(0.8); }
+}
+/*TextoSaleDelLogo*/
+.logo-text.salir {
+  animation: salirTexto 0.6s ease forwards;
+}
+@keyframes salirTexto {
+  0% { opacity: 0; transform: translateX(-50px) scale(0.8); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+#btnPlayMusica {
+  border: none;
+  padding: 0.4rem 0.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 100px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a2a4a;
+  padding: 1rem 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  background-color: #0a2a4a;
+  color: white;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.cta {
+  text-decoration: none;
+  background: linear-gradient(to right, #0077ff, #00c6ff);
+  border: none;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.Servicios, .Nosotros {
+  padding: 1rem;
+  text-align: center;
+}
+
+.Tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.TarjetaS, .TarjetaN {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.TarjetaS {
+  width: 250px;
+}
+.TarjetaN {
+  width: 80%;
+}
+
+.Pregunta {
+  background-color: #eaf0f6;
+  padding: 1rem;
+  text-align: center;
+}
+.Pregunta ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Testimonios {
+  padding: 1rem;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+blockquote {
+  font-style: italic;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+footer {
+  background-color: #0a2a4a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+.MensajeMosca {
+  position: fixed;
+  font-style: italic;
+  top: 50px;
+  right: 45px;
+  background-color: #0077ff;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  display: none;
+  text-align: right;
+}
+.EmojiMosca {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  font-size: 2rem;
+  display: none;
+  animation: explotar 1s ease-out;
+}
+@keyframes explotar {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
